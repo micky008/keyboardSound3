@@ -1,0 +1,144 @@
+{
+    "ws": {
+        "port": 9998
+    },
+    "channels": [
+        {
+            "channel": "DEV",
+            "sounds": [
+                {
+                    "name": "Motus",
+                    "filename": "C:/Users/micky/Music/sons/motus.mp3"
+                },
+                {
+                    "name": "Ah !",
+                    "filename": "C:/Users/micky/Music/sons/ah.mp3"
+                }, {
+                    "name": "Nani",
+                    "filename": "C:/Users/micky/Music/sons/nani.mp3"
+                },
+                {
+                    "name": "Non",
+                    "filename": "C:/Users/micky/Music/sons/non.mp3"
+                }, {
+                    "name": "OUIIII",
+                    "filename": "C:/Users/micky/Music/sons/ouiii.mp3"
+                }, {
+                    "name": "Tresor !",
+                    "filename": "C:/Users/micky/Music/sons/treasure.mp3"
+                }, {
+                    "name": "ATTENTION",
+                    "filename": "C:/Users/micky/Music/sons/attention.mp3"
+                }, {
+                    "name": "CouCou",
+                    "filename": "C:/Users/micky/Music/sons/coucou.mp3"
+                }, {
+                    "name": "CC-Suite",
+                    "filename": "C:/Users/micky/Music/sons/coucou-suite.mp3"
+                }, {
+                    "name": "DTC !",
+                    "filename": "C:/Users/micky/Music/sons/dtc-rambo3.mp3"
+                }, {
+                    "name": "FF7 Victory",
+                    "filename": "C:/Users/micky/Music/sons/ff7-victory.mp3"
+                }, {
+                    "name": "Exxxxcuse-me",
+                    "filename": "C:/Users/micky/Music/sons/excuse-me.mp3"
+                }, {
+                    "name": "Yamete",
+                    "filename": "C:/Users/micky/Music/sons/yamete.mp3"
+                }, {
+                    "name": "RAF JAPONAIS",
+                    "filename": "C:/Users/micky/Music/sons/JAPONAIS.mp3"
+                }, {
+                    "name": "PHILLLLIPE",
+                    "filename": "C:/Users/micky/Music/sons/phillipe.mp3"
+                }, {
+                    "name": "SALAUD !",
+                    "filename": "C:/Users/micky/Music/sons/salop.mp3"
+                }, {
+                    "name": "TUT TUT",
+                    "filename": "C:/Users/micky/Music/sons/tut-tut-fdp.mp3"
+                }, {
+                    "name": "La Kouisine",
+                    "filename": "C:/Users/micky/Music/sons/cuisine.mp3"
+                }, {
+                    "name": "Ca c'est de l'art",
+                    "filename": "C:/Users/micky/Music/sons/art.mp3"
+                }, {
+                    "name": "Souffir",
+                    "filename": "C:/Users/micky/Music/sons/souffrir-ok.mp3"
+                }, {
+                    "name": "j'aime le piment",
+                    "filename": "C:/Users/micky/Music/sons/aime-pimant.mp3"
+                }, {
+                    "name": "Claque",
+                    "filename": "C:/Users/micky/Music/sons/ca-claque.mp3"
+                }, {
+                    "name": "Levrette",
+                    "filename": "C:/Users/micky/Music/sons/levrette.mp3"
+                }, {
+                    "name": "Detail",
+                    "filename": "C:/Users/micky/Music/sons/point-detail.mp3"
+                }, {
+                    "name": "JEANNE",
+                    "filename": "C:/Users/micky/Music/sons/jeanne-secours.mp3"
+                }, {
+                    "name": "Bon Chance",
+                    "filename": "C:/Users/micky/Music/sons/bon-chance.mp3"
+                }, {
+                    "name": "C-T-T",
+                    "filename": "C:/Users/micky/Music/sons/cherche-trouve-kill.mp3"
+                }, {
+                    "name": "Vraiment tres inté.",
+                    "filename": "C:/Users/micky/Music/sons/maci-cvti.mp3"
+                }, {
+                    "name": "Message-zik",
+                    "filename": "C:/Users/micky/Music/sons/maci-zik.mp3"
+                }, {
+                    "name": "Silence",
+                    "filename": "C:/Users/micky/Music/sons/silence.mp3"
+                }, {
+                    "name": "CEPENDANT",
+                    "filename": "C:/Users/micky/Music/sons/cependant.mp3"
+                }, {
+                    "name": "WIZZ",
+                    "filename": "C:/Users/micky/Music/sons/msn-wizz.mp3"
+                }
+            ]
+        },
+        {
+            "channel": "OPS",
+            "sounds": [
+                {
+                    "name": "Content",
+                    "filename": "C:/Users/micky/Music/sons/content.mp3"
+                }, {
+                    "name": "forcage",
+                    "filename": "C:/Users/micky/Music/sons/forcage.mp3"
+                }, {
+                    "name": "Heinrish",
+                    "filename": "C:/Users/micky/Music/sons/Heinrish.mp3"
+                }, {
+                    "name": "Mission rate",
+                    "filename": "C:/Users/micky/Music/sons/missionratee.mp3"
+                }, {
+                    "name": "polish",
+                    "filename": "C:/Users/micky/Music/sons/polish.mp3"
+                }, {
+                    "name": "pot",
+                    "filename": "C:/Users/micky/Music/sons/pot.mp3"
+                }, {
+                    "name": "QUILEFERA",
+                    "filename": "C:/Users/micky/Music/sons/QUILEFERA.mp3"
+                }, {
+                    "name": "tamponne",
+                    "filename": "C:/Users/micky/Music/sons/tamponne.mp3"
+                }, {
+                    "name": "traitre",
+                    "filename": "C:/Users/micky/Music/sons/traitre.mp3"
+                }
+            ]
+        }
+    ]
+}
