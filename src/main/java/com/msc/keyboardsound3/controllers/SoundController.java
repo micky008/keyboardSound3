@@ -33,7 +33,6 @@ public class SoundController {
     public List<SoundDTO> getAllSounds(@PathParam(value = "idChannel") int idChannel) {
         List<Sound> ss = SoundDAO.getByChannel(idChannel);
         return Converter.toSoundsDTO(ss);
-
     }
 
     @GET
@@ -43,7 +42,6 @@ public class SoundController {
         Response.ResponseBuilder r = buildStream(new File(s.filename), range);
         r.header(HttpHeaders.CONTENT_TYPE, "audio/mp3");
         return r.build();
-
     }
 
     /**

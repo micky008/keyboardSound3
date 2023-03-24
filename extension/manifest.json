@@ -1,0 +1,26 @@
+{
+   "manifest_version": 3,
+   "name": "KeyboardSound3",
+   "version": "3.0",
+   "description": "Histoire de bien foutre la merde dans les équipes",
+   "icons": {
+      "32": "icons/caca-32.png",
+      "48": "icons/caca-48.png"
+   },
+   "action": {
+		"browser_style": true,
+		"default_icon": {
+			"32": "icons/caca-32.png",
+			"48": "icons/caca-48.png"
+		},
+      "default_title": "KeyboardSound3",
+      "default_popup": "page.html"
+   },
+   "background": {
+		"scripts": ["bg.js"]
+	},
+   "permissions": [
+      "storage",
+      "unlimitedStorage"
+   ]
+}
