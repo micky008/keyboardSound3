@@ -8,20 +8,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
 async function connect() {
 	
 		let chanRaw = await chrome.storage.local.get(['chan']); 
-		let {key} = chanRaw;
-		if (!key){
-			key = 1;
+		let chan = 1;	
+		if (chanRaw['chan']){
+			chan = chanRaw['chan'];
 		}
 		clearUl('myselect');
 		let response = await fetch("http://localhost:9998/channel/");
 		let channels = await response.json();
 		let select = document.getElementById("myselect");
-		for (let chan of channels) { //chan = {id:int, channel:string}
+		for (let chanObj of channels) { //chan = {id:int, channel:string}
 			let opt = document.createElement("option");
-			opt.text = chan.channel;
-			opt.selected = chan.id == key;
+			opt.text = chanObj.channel;
+			opt.selected = chanObj.id == chan;
 			if (opt.selected) {
-				readSongList(chan.id);
+				readSongList(chanObj.id);
 			}
 			select.appendChild(opt);
 		}
@@ -29,7 +29,7 @@ async function connect() {
 }
 
 function setStorage(event) {
-	let chan = event.target.selectedIndex; //OPS ou DEV	
+	let chan = event.target.selectedIndex+1; //OPS ou DEV		
 	chrome.storage.local.set({ 'chan': chan });
 	readSongList(chan);	
 }
@@ -37,7 +37,7 @@ function setStorage(event) {
 
 
 async function readSongList(channelId) {
-	let url = "http://localhost:9998/sound/"+channelId;
+	let url = "http://localhost:9998/sound/"+channelId;	
 	let resp = await fetch(url);
 	let sounds = await resp.json();
 	clearUl('myTable');
@@ -69,7 +69,7 @@ function buildLine(idChannel, sound) { //sound = {id: int, name:string}
 	let mybutton = document.createElement("button");	
 	mybutton.type = 'button';
 	mybutton.innerHTML = 'GO';
-	mybutton.addEventListener('click', mysend.bind(null, url));
+	mybutton.addEventListener('click', mysend.bind(null, url)); //trick to make a call
 	td1.innerHTML = `${sound['name']}`;
 	td2.appendChild(mybutton);
 	tr.appendChild(td1);
