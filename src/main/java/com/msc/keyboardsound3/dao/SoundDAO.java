@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class SoundDAO {
 
-    public static List<Sound> getByChannel(int idChannel) {
+    public static List<Sound> getByChannel(String idChannel) {
         Channel c = ChannelDAO.getById(idChannel);
         if (c == null) {
             return new ArrayList<>(0);
@@ -19,9 +19,9 @@ public class SoundDAO {
         return c.sounds;
     }
 
-    public static Sound getById(int idChannel, int idSound) {
+    public static Sound getById(String idChannel, String idSound) {
         for (Sound s : getByChannel(idChannel)) {
-            if (s.id == idSound) {
+            if (s.id.equals(idSound)) {
                 return s;
             }
         }

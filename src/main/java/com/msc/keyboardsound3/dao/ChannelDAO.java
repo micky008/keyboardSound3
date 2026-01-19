@@ -9,9 +9,9 @@ import com.msc.keyboardsound3.entity.Channel;
  */
 public class ChannelDAO {
 
-    public static Channel getById(int id) {
+    public static Channel getById(String id) {
         for (Channel c : ConfigReader.getInstance().channels) {
-            if (id == c.id) {
+            if (c.id.equals(id) ) {
                 return c;
             }
         }

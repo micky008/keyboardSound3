@@ -32,9 +32,9 @@ public class ConfigReader {
         IOUtils.closeQuietly(fr);
         int i = 1, j = 1;
         for (Channel c : config.channels) {
-            c.id = i++;
+            c.id = "c"+i++;
             for (Sound s : c.sounds) {
-                s.id = j++;
+                s.id = "s"+j++;
             }
         }
         instance = config;

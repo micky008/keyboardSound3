@@ -30,14 +30,14 @@ public class SoundController {
 
     @GET
     @Path("{idChannel}")
-    public List<SoundDTO> getAllSounds(@PathParam(value = "idChannel") int idChannel) {
+    public List<SoundDTO> getAllSounds(@PathParam(value = "idChannel") String idChannel) {
         List<Sound> ss = SoundDAO.getByChannel(idChannel);
         return Converter.toSoundsDTO(ss);
     }
 
     @GET
     @Path("{idChannel}/{id}")
-    public Response streamAudio(@HeaderParam("Range") String range, @PathParam("idChannel") int idChannel, @PathParam("id") int id) throws Exception {
+    public Response streamAudio(@HeaderParam("Range") String range, @PathParam("idChannel") String idChannel, @PathParam("id") String id) throws Exception {
         Sound s = SoundDAO.getById(idChannel, id);
         Response.ResponseBuilder r = buildStream(new File(s.filename), range);
         r.header(HttpHeaders.CONTENT_TYPE, "audio/mp3");

@@ -7,6 +7,6 @@ package com.msc.keyboardsound3.entity;
 public class Sound {
 
     public String filename;
-    public int id;
+    public String id;
     public String name;
 }

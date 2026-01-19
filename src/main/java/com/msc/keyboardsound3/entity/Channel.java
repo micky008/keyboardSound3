@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Channel {
 
-    public int id;
+    public String id;
     public String channel;
     public List<Sound> sounds;
 }

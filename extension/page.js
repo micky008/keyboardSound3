@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 async function connect() {
 	
 		let chanRaw = await chrome.storage.local.get(['chan']); 
-		let chan = 1;	
+		let chan = 'c'+1;	
 		if (chanRaw['chan']){
 			chan = chanRaw['chan'];
 		}
@@ -16,7 +16,7 @@ async function connect() {
 		let response = await fetch("http://localhost:9998/channel/");
 		let channels = await response.json();
 		let select = document.getElementById("myselect");
-		for (let chanObj of channels) { //chan = {id:int, channel:string}
+		for (let chanObj of channels) { //chan = {id:string, channel:string} id=c1
 			let opt = document.createElement("option");
 			opt.text = chanObj.channel;
 			opt.selected = chanObj.id == chan;
@@ -59,7 +59,7 @@ function mysend(url) {
 		fetch(url, {method:"POST"}).then(()=>{});
 }
 
-function buildLine(idChannel, sound) { //sound = {id: int, name:string}
+function buildLine(idChannel, sound) { //sound = {id: int, name:string} id=s1
 	let url = `http://localhost:9998/sse/${idChannel}/${sound['id']}`
 	console.log(url)
 	let table = document.getElementById('myTable');

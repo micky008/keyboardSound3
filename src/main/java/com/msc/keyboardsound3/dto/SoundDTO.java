@@ -6,6 +6,6 @@ package com.msc.keyboardsound3.dto;
  */
 public class SoundDTO {
 
-    public int id;
+    public String id;
     public String name;
 }

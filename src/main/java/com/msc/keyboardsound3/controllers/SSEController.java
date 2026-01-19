@@ -26,37 +26,8 @@ public class SSEController {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.TEXT_PLAIN)
-    public String reloadAll() {
-        OutboundEvent.Builder eventBuilder = new OutboundEvent.Builder();
-        OutboundEvent event = eventBuilder.name("reloadAll")
-                .mediaType(MediaType.TEXT_PLAIN_TYPE)
-                .data(String.class, "reload")
-                .build();
-
-        broadcaster.broadcast(event);
-        return "ok";
-    }
-
-    @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    @Consumes(MediaType.TEXT_PLAIN)
-    @Path("{idChan}")
-    public String reloadChanOnly(@PathParam("idChan") Integer idChan) {
-        OutboundEvent.Builder eventBuilder = new OutboundEvent.Builder();
-        OutboundEvent event = eventBuilder.name("reloadChan")
-                .mediaType(MediaType.TEXT_PLAIN_TYPE)
-                .data(String.class, ""+idChan)
-                .build();
-
-        broadcaster.broadcast(event);
-        return "ok";
-    }
-
-    @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    @Consumes(MediaType.TEXT_PLAIN)
     @Path("{idChan}/{idSound}")
-    public String play(@PathParam("idChan") Integer idChan,@PathParam("idSound") Integer idSound) {
+    public String play(@PathParam("idChan") String idChan,@PathParam("idSound") String idSound) {
         OutboundEvent.Builder eventBuilder = new OutboundEvent.Builder();
         OutboundEvent event = eventBuilder.name("play")
                 .mediaType(MediaType.TEXT_PLAIN_TYPE)

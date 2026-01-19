@@ -6,6 +6,6 @@ package com.msc.keyboardsound3.dto;
  */
  public class ChannelDTO {
 
-    public int id;
-    public String channel;
+    public String id;
+    public String name;
 }

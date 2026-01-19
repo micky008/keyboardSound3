@@ -15,7 +15,7 @@ public class Converter {
 
     public static ChannelDTO toChannelDTO(Channel chan) {
         ChannelDTO dto = new ChannelDTO();
-        dto.channel = chan.channel;
+        dto.name = chan.channel;
         dto.id = chan.id;
         return dto;
     }
