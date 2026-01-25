@@ -26,12 +26,12 @@ public class SSEController {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.TEXT_PLAIN)
-    @Path("{idChan}/{idSound}")
-    public String play(@PathParam("idChan") String idChan,@PathParam("idSound") String idSound) {
+    @Path("{idSound}")
+    public String play(@PathParam("idSound") String idSound) {
         OutboundEvent.Builder eventBuilder = new OutboundEvent.Builder();
         OutboundEvent event = eventBuilder.name("play")
                 .mediaType(MediaType.TEXT_PLAIN_TYPE)
-                .data(String.class, idChan+":"+idSound)
+                .data(String.class, idSound)
                 .build();
 
         broadcaster.broadcast(event);

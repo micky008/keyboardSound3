@@ -4,7 +4,7 @@
     },
     "channels": [
         {
-            "channel": "DEV",
+            "channel": "Classiques",
             "sounds": [
                 {
                     "name": "Motus",
@@ -108,7 +108,7 @@
             ]
         },
         {
-            "channel": "OPS",
+            "channel": "Special ex-OPS",
             "sounds": [
                 {
                     "name": "Content",
@@ -139,6 +139,18 @@
                     "filename": "C:/Users/micky/Music/sons/OPS/traitre.mp3"
                 }
             ]
-        }
+        },
+        {
+            "channel": "MJ",
+            "sounds": [                
+                {
+                    "name": "You died",
+                    "filename": "C:/Users/micky/Music/sons/mj/you-died.mp3"
+                },
+                {
+                    "name": "Menace !",
+                    "filename": "C:/Users/micky/Music/sons/mj/menace.mp3"
+                }                
+            ]}
     ]
 }

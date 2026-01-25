@@ -1,9 +1,8 @@
 package com.msc.keyboardsound3.dao;
 
+import com.msc.keyboardsound3.config.ConfigReader;
 import com.msc.keyboardsound3.entity.Channel;
 import com.msc.keyboardsound3.entity.Sound;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -11,18 +10,12 @@ import java.util.List;
  */
 public class SoundDAO {
 
-    public static List<Sound> getByChannel(String idChannel) {
-        Channel c = ChannelDAO.getById(idChannel);
-        if (c == null) {
-            return new ArrayList<>(0);
-        }
-        return c.sounds;
-    }
-
-    public static Sound getById(String idChannel, String idSound) {
-        for (Sound s : getByChannel(idChannel)) {
-            if (s.id.equals(idSound)) {
-                return s;
+    public static Sound getById(String idSound) {
+        for (Channel c : ConfigReader.getInstance().channels) {
+            for (Sound s : c.sounds) {
+                if (s.id.equals(idSound)) {
+                    return s;
+                }
             }
         }
         return null;

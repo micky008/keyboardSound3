@@ -1,7 +1,10 @@
 package com.msc.keyboardsound3.controllers;
 
+import com.msc.keyboardsound3.config.ConfigReader;
 import com.msc.keyboardsound3.dao.SoundDAO;
+import com.msc.keyboardsound3.dto.ChannelDTO;
 import com.msc.keyboardsound3.dto.SoundDTO;
+import com.msc.keyboardsound3.entity.Channel;
 import com.msc.keyboardsound3.entity.Sound;
 import com.msc.keyboardsound3.helpers.Converter;
 import com.msc.keyboardsound3.helpers.MediaStreamer;
@@ -12,7 +15,10 @@ import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
 import java.nio.channels.WritableByteChannel;
 import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.Path;
@@ -29,16 +35,18 @@ import javax.ws.rs.core.StreamingOutput;
 public class SoundController {
 
     @GET
-    @Path("{idChannel}")
-    public List<SoundDTO> getAllSounds(@PathParam(value = "idChannel") String idChannel) {
-        List<Sound> ss = SoundDAO.getByChannel(idChannel);
-        return Converter.toSoundsDTO(ss);
+    public Map<String, List<SoundDTO>> getAllSounds() {
+        Map map = new LinkedHashMap<>();
+        for (Channel c : ConfigReader.getInstance().channels) {
+            map.put(c.id, Converter.toSoundsDTO(c.sounds));
+        }
+        return map;
     }
 
     @GET
-    @Path("{idChannel}/{id}")
-    public Response streamAudio(@HeaderParam("Range") String range, @PathParam("idChannel") String idChannel, @PathParam("id") String id) throws Exception {
-        Sound s = SoundDAO.getById(idChannel, id);
+    @Path("{id}")
+    public Response streamAudio(@HeaderParam("Range") String range, @PathParam("id") String id) throws Exception {
+        Sound s = SoundDAO.getById(id);
         Response.ResponseBuilder r = buildStream(new File(s.filename), range);
         r.header(HttpHeaders.CONTENT_TYPE, "audio/mp3");
         return r.build();
